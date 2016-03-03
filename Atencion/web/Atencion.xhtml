@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style> 
+        body 
+            {
+            font-family: "Open Sans", sans-serif;
+            height: 100vh;
+            background: url("http://www.grupoarion.com.mx/blog/wp-content/uploads/sites/7/2015/10/atencion-clientes.jpg") 50% fixed;
+            background-size: cover;
+            color: #444;
+            }
+        </style>
+    </h:head>
+    
+    <h:body>
+        
+        
+        
+        <br></br>
+        <br>
+            <h:outputLabel value="Alguna Sugerencia o Compra especial" for="nombre"  style="color: orchid" />
+        </br>
+        <br>
+        <h:outputLabel value="Puedes Contactarnos en: paracetamol@live.com.mx" for="nombre"  style="color: orchid" />
+        </br>
+        <br>
+        <h:outputLabel value="Gerente de la Empresa: vargasjuan@hotmail.com" for="nombre"  style="color: orchid" />
+        </br>
+        <br>
+        <h:outputLabel value="Contactanos vía Telefónica por: 775-123-5634" for="nombre"  style="color: orchid" />
+        </br>
+        <br>
+        <h:outputLabel value="Tu salud es nuestra responsabilidad" for="nombre"  style="color: orchid" />
+        </br>
+        <br/>
+        <br/>
+        <br/>
+        <h:form >
+            
+        <h:panelGrid columns="3">
+                
+<h:outputLabel value="Nombre:" for="nombre" style="color: darkslategrey"/>
+<h:inputText id="nombre" label="nombre" style="background-color: azure"
+             required="true" requiredMessage="Porfavor Ingrese su Nombre"
+value="#{ingresar.nombre}"
+validatorMessage="El nombre debe ser menos de 30 caracteres">
+<f:validateLength maximum="30"/>
+</h:inputText>
+<h:message for="nombre" styleClass="error"  />
+
+<h:outputLabel value="Apellido:" for="apellido" style="color: darkslategrey"/>
+<h:inputText id="apellido" label="apellido" style="background-color: azure"
+             required="true" requiredMessage="Porfavor Ingrese sus Apeidos"
+             value="#{ingresar.apeido}" validatorMessage="Solo debe ser menor a 30 caracteres">
+    <f:validateLength maximum="30"/>
+</h:inputText>
+<h:message for="apellido" styleClass="error" />
+
+<h:outputLabel value="Domicilio:" for="domicilio" style="color: darkslategrey"/>
+<h:inputTextarea id="domicilio" label="domicilio" style="background-color: azure"
+                 required="true" requiredMessage="Porfavor Ingrese el domicilio"
+                 value="#{ingresar.domicilio}" validatorMessage="Solo debe ser menor a 30 caracteres">
+    <f:validateLength maximum="30"/>
+</h:inputTextarea>
+<h:message for="domicilio" styleClass="error"/>
+
+<h:panelGroup/>
+
+<h:commandButton id="register" value="Registrarse" action="menuP" style="background-color: gold" />
+
+            </h:panelGrid>
+            
+        </h:form>
+        
+    </h:body>
+</html>
+
